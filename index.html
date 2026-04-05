@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curated by Andrea · Luxury Travel Design</title>
+<meta name="description" content="Bespoke luxury travel itineraries by Andrea Gonzalez, Virtuoso Member Advisor with Fora Travel. Extraordinary destinations, curated for you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cream:#faf7f2;--cream2:#f3ede3;--cream3:#e8dfd0;
+  --ink:#1c1a17;--ink2:#4a453d;--ink3:#8a8278;
+  --gold:#b08d5b;--gold2:#d4af78;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;}
+
+/* NAV */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 3rem;background:var(--cream);border-bottom:1px solid var(--cream3);position:sticky;top:0;z-index:200;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:0.12em;color:var(--ink);text-transform:uppercase;text-decoration:none;}
+.nav-logo em{font-style:italic;font-weight:300;color:var(--ink2);}
+.nav-links{display:flex;gap:2.2rem;list-style:none;}
+.nav-links a{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink2);text-decoration:none;cursor:pointer;transition:color 0.2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;padding:10px 24px;border:1px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer;font-family:'Jost',sans-serif;font-weight:400;transition:background 0.2s,color 0.2s;}
+.nav-cta:hover{background:var(--ink);color:var(--cream);}
+
+/* HERO */
+.hero{position:relative;height:92vh;min-height:580px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80');background-size:cover;background-position:center;}
+.hero-overlay{position:absolute;inset:0;background:rgba(20,16,12,0.48);}
+.hero-content{position:relative;z-index:2;padding:2rem;}
+.hero-pre{font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold2);margin-bottom:1.75rem;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:74px;font-weight:300;line-height:1.08;color:#faf7f2;max-width:820px;margin:0 auto 1.75rem;}
+.hero-title em{font-style:italic;color:var(--gold2);}
+.hero-rule{width:40px;height:1px;background:var(--gold2);margin:0 auto 1.75rem;}
+.hero-sub{font-size:14px;color:rgba(250,247,242,0.8);max-width:460px;margin:0 auto 2.75rem;line-height:1.9;letter-spacing:0.04em;}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-cream{padding:14px 40px;background:var(--cream);color:var(--ink);font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;border:none;cursor:pointer;transition:opacity 0.2s;}
+.btn-cream:hover{opacity:0.85;}
+.btn-ghost-lt{padding:14px 40px;background:transparent;color:var(--cream);font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;border:1px solid rgba(250,247,242,0.4);cursor:pointer;transition:border-color 0.2s;}
+.btn-ghost-lt:hover{border-color:var(--gold2);}
+
+/* MARQUEE */
+.marquee-bar{background:var(--ink);padding:12px 0;overflow:hidden;white-space:nowrap;}
+.marquee-inner{display:inline-block;animation:marquee 26s linear infinite;}
+.marquee-inner span{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cream2);padding:0 2.5rem;}
+.marquee-inner span.dot{color:var(--gold);padding:0 0.3rem;}
+@keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* PHOTO STRIP */
+.photo-strip{display:grid;grid-template-columns:repeat(4,1fr);height:280px;}
+.photo-strip-item{overflow:hidden;position:relative;}
+.photo-strip-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;display:block;}
+.photo-strip-item:hover img{transform:scale(1.05);}
+.ps-label{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(transparent,rgba(20,16,12,0.65));font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,247,242,0.9);}
+
+/* SECTIONS */
+.section{padding:5.5rem 3rem;}
+.section-bg{background:var(--cream2);}
+.section-dk{background:var(--ink);}
+.section-eyebrow{font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;}
+.section-h{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;line-height:1.12;color:var(--ink);}
+.section-h em{font-style:italic;}
+.section-p{font-size:14px;color:var(--ink2);line-height:1.9;letter-spacing:0.03em;max-width:460px;}
+
+/* DESTINATIONS */
+.dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--cream3);margin-top:4rem;}
+.dest-cell{background:var(--cream);position:relative;cursor:pointer;transition:background 0.25s;overflow:hidden;}
+.dest-cell:hover{background:var(--cream2);}
+.dest-cell-img{height:220px;overflow:hidden;}
+.dest-cell-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;display:block;}
+.dest-cell:hover .dest-cell-img img{transform:scale(1.05);}
+.dest-cell-body{padding:1.75rem 2rem 3rem;}
+.dest-num{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold);letter-spacing:0.1em;margin-bottom:0.6rem;}
+.dest-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--ink);margin-bottom:0.5rem;line-height:1.2;}
+.dest-region{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink3);}
+.dest-arrow{position:absolute;bottom:1.75rem;right:2rem;font-size:18px;color:var(--cream3);transition:color 0.2s;}
+.dest-cell:hover .dest-arrow{color:var(--gold);}
+.dest-badge{display:inline-block;margin-top:0.75rem;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;background:var(--gold);color:var(--cream);padding:4px 10px;}
+
+/* SERVICES */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
+.sticky-col{position:sticky;top:5rem;}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3.5rem;}
+.svc-item{border-top:1px solid var(--cream3);padding-top:1.75rem;}
+.svc-num{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold);margin-bottom:0.75rem;}
+.svc-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--ink);margin-bottom:0.75rem;}
+.svc-desc{font-size:13px;color:var(--ink2);line-height:1.8;}
+.btn-dark{padding:14px 40px;background:var(--ink);color:var(--cream);font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;border:none;cursor:pointer;transition:opacity 0.2s;}
+.btn-dark:hover{opacity:0.8;}
+
+/* VIRTUOSO */
+.virt-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
+.virt-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--gold);padding:8px 18px;margin-bottom:2rem;}
+.virt-badge-text{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold2);}
+.virt-h{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;line-height:1.1;color:var(--cream);}
+.virt-h em{font-style:italic;color:var(--gold2);}
+.virt-rule{width:40px;height:1px;background:var(--gold);margin:2rem 0;}
+.virt-p{font-size:14px;color:#8a8278;line-height:1.9;max-width:420px;}
+.virt-perks{margin-top:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+.virt-perk{border-left:1px solid #333;padding-left:1rem;}
+.virt-perk-title{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold2);margin-bottom:4px;}
+.virt-perk-desc{font-size:12px;color:#6a6560;line-height:1.6;}
+.virt-img-wrap{position:relative;padding-bottom:2rem;}
+.virt-img-main{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;}
+.virt-img-badge{position:absolute;bottom:0;left:-1.5rem;background:var(--cream);padding:1.5rem;width:220px;}
+.virt-img-badge-text{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--ink2);line-height:1.4;}
+.virt-img-badge-sub{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-top:0.5rem;}
+
+/* ABOUT & STATS */
+.stats-row{display:grid;grid-template-columns:1fr;gap:2rem;margin-top:3rem;border-top:1px solid var(--cream3);padding-top:3rem;}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--gold);line-height:1;}
+.stat-l{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink3);margin-top:0.5rem;}
+
+/* REVIEW FORM */
+.review-form-wrap{background:var(--cream2);border:1px solid var(--cream3);padding:2.5rem;margin-top:3rem;}
+.r-label{display:block;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px;}
+.r-input{width:100%;padding:10px 0;border:none;border-bottom:1px solid var(--cream3);background:transparent;font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);font-weight:300;outline:none;transition:border-color 0.2s;resize:none;}
+.r-input:focus{border-bottom-color:var(--gold);}
+.r-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;}
+.r-full{margin-bottom:1.5rem;}
+.star-row{display:flex;gap:6px;margin-bottom:1.5rem;}
+.star{font-size:22px;color:var(--cream3);cursor:pointer;transition:color 0.15s;line-height:1;user-select:none;}
+.star.active{color:var(--gold2);}
+.btn-review{padding:13px 32px;background:var(--ink);color:var(--cream);font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;border:none;cursor:pointer;transition:background 0.2s;}
+.btn-review:hover{background:var(--gold);}
+
+/* CONTACT */
+.contact-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start;}
+label{display:block;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px;}
+input,select,textarea{width:100%;padding:12px 0;border:none;border-bottom:1px solid var(--cream3);background:transparent;font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);font-weight:300;outline:none;transition:border-color 0.2s;resize:none;}
+input:focus,select:focus,textarea:focus{border-bottom-color:var(--gold);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.form-gap{margin-top:2rem;}
+.btn-submit{margin-top:2.5rem;width:100%;padding:16px;background:var(--ink);color:var(--cream);font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.24em;text-transform:uppercase;border:none;cursor:pointer;transition:background 0.2s;}
+.btn-submit:hover{background:var(--gold);}
+
+/* FOOTER */
+footer{background:var(--ink);padding:4rem 3rem 2rem;}
+.footer-top{display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:3rem;padding-bottom:3rem;border-bottom:1px solid #2a2520;}
+.footer-logo-big{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--cream);letter-spacing:0.08em;text-align:center;line-height:1.1;}
+.footer-logo-big em{font-style:italic;color:var(--gold2);}
+.footer-links-col p{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold2);margin-bottom:1rem;}
+.footer-links-col a{display:block;font-size:13px;color:#8a8278;text-decoration:none;margin-bottom:0.6rem;transition:color 0.2s;}
+.footer-links-col a:hover{color:var(--cream2);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;}
+.footer-copy{font-size:11px;color:#5a5550;letter-spacing:0.06em;}
+.footer-social{display:flex;gap:1.5rem;}
+.footer-social a{font-size:11px;letter-spacing:0.1em;color:#5a5550;text-decoration:none;text-transform:uppercase;transition:color 0.2s;}
+.footer-social a:hover{color:var(--cream2);}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(20,18,15,0.78);z-index:1000;overflow-y:auto;padding:2rem 1rem;}
+.modal-overlay.open{display:flex;align-items:flex-start;justify-content:center;}
+.modal-box{background:var(--cream);max-width:800px;width:100%;margin:auto;position:relative;}
+.modal-hero{height:280px;overflow:hidden;position:relative;}
+.modal-hero img{width:100%;height:100%;object-fit:cover;display:block;}
+.modal-hero-overlay{position:absolute;inset:0;background:rgba(20,16,12,0.45);}
+.modal-close{position:absolute;top:1.25rem;right:1.25rem;background:rgba(20,16,12,0.55);border:none;color:var(--cream2);font-size:18px;cursor:pointer;font-family:'Jost',sans-serif;width:34px;height:34px;display:flex;align-items:center;justify-content:center;z-index:10;}
+.modal-close:hover{background:var(--gold);}
+.modal-hero-text{position:absolute;bottom:0;left:0;padding:2rem 2.5rem;}
+.modal-eyebrow{font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold2);margin-bottom:0.6rem;}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:var(--cream);line-height:1.1;}
+.modal-title em{font-style:italic;color:var(--gold2);}
+.modal-subtitle{font-size:12px;color:rgba(250,247,242,0.65);margin-top:0.5rem;letter-spacing:0.06em;}
+.modal-body{padding:2.5rem 2.5rem 1.5rem;}
+.itin-day{border-left:1px solid var(--cream3);padding-left:1.5rem;margin-bottom:2.25rem;position:relative;}
+.itin-day::before{content:'';position:absolute;left:-5px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--gold);}
+.itin-day-label{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.35rem;}
+.itin-day-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--ink);margin-bottom:0.45rem;}
+.itin-activities{font-size:13px;color:var(--ink2);line-height:1.8;}
+.itin-hotel{display:inline-block;margin-top:0.6rem;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--cream3);padding:4px 12px;}
+.modal-cta{padding:1.5rem 2.5rem 2.5rem;border-top:1px solid var(--cream3);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.modal-cta p{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--ink2);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  .hero-title{font-size:44px;}
+  .photo-strip{grid-template-columns:repeat(2,1fr);height:320px;}
+  .dest-grid{grid-template-columns:1fr 1fr;}
+  .two-col,.virt-inner,.contact-wrap{grid-template-columns:1fr;gap:3rem;}
+  .sticky-col{position:static;}
+  .footer-top{grid-template-columns:1fr;text-align:center;}
+  .footer-links-col{text-align:center!important;}
+  .section{padding:4rem 1.5rem;}
+  .virt-img-badge{left:0;}
+}
+@media(max-width:600px){
+  .hero-title{font-size:34px;}
+  .dest-grid{grid-template-columns:1fr;}
+  .form-row,.r-row{grid-template-columns:1fr;}
+  .photo-strip{grid-template-columns:1fr 1fr;height:240px;}
+  .virt-perks{grid-template-columns:1fr;}
+  .svc-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="#">Curated <em>by Andrea</em></a>
+  <ul class="nav-links">
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#virtuoso">Virtuoso</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Inquire</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-pre">Luxury Travel Design · Virtuoso Advisor</p>
+    <h1 class="hero-title">The world's most <em>extraordinary</em> places, curated for you</h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">Bespoke itineraries crafted with genuine care and insider access — every journey a true reflection of you.</p>
+    <div class="hero-btns">
+      <button class="btn-cream" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start your journey</button>
+      <button class="btn-ghost-lt" onclick="document.getElementById('destinations').scrollIntoView({behavior:'smooth'})">Explore destinations</button>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-inner">
+    <span>Maldives</span><span class="dot">✦</span><span>Amalfi Coast</span><span class="dot">✦</span><span>Serengeti</span><span class="dot">✦</span><span>New Zealand</span><span class="dot">✦</span><span>Japan</span><span class="dot">✦</span><span>Namibia</span><span class="dot">✦</span><span>Virtuoso Preferred Partner</span><span class="dot">✦</span><span>Maldives</span><span class="dot">✦</span><span>Amalfi Coast</span><span class="dot">✦</span><span>Serengeti</span><span class="dot">✦</span><span>New Zealand</span><span class="dot">✦</span><span>Japan</span><span class="dot">✦</span><span>Namibia</span><span class="dot">✦</span><span>Virtuoso Preferred Partner</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- PHOTO STRIP -->
+<div class="photo-strip">
+  <div class="photo-strip-item"><img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=80" alt="Maldives overwater villa"><div class="ps-label">Maldives</div></div>
+  <div class="photo-strip-item"><img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=600&q=80" alt="Amalfi Coast"><div class="ps-label">Amalfi Coast</div></div>
+  <div class="photo-strip-item"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80" alt="Africa safari"><div class="ps-label">Africa</div></div>
+  <div class="photo-strip-item"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80" alt="Japan temple"><div class="ps-label">Japan</div></div>
+</div>
+
+<!-- DESTINATIONS -->
+<section class="section" id="destinations">
+  <p class="section-eyebrow">Signature destinations</p>
+  <h2 class="section-h">Places that stay <em>with you</em> forever</h2>
+  <p style="font-size:13px;color:var(--ink3);margin-top:0.75rem;letter-spacing:0.04em;">Click any destination to explore a suggested 14-day luxury itinerary.</p>
+  <div class="dest-grid">
+    <div class="dest-cell" onclick="openModal('maldives')">
+      <div class="dest-cell-img"><img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=700&q=80" alt="Maldives"></div>
+      <div class="dest-cell-body"><p class="dest-num">01</p><p class="dest-name">Maldives</p><p class="dest-region">Indian Ocean</p><span class="dest-badge">14-day itinerary</span></div>
+      <span class="dest-arrow">→</span>
+    </div>
+    <div class="dest-cell" onclick="openModal('amalfi')">
+      <div class="dest-cell-img"><img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=700&q=80" alt="Amalfi Coast"></div>
+      <div class="dest-cell-body"><p class="dest-num">02</p><p class="dest-name">Amalfi Coast</p><p class="dest-region">Southern Italy</p><span class="dest-badge">14-day itinerary</span></div>
+      <span class="dest-arrow">→</span>
+    </div>
+    <div class="dest-cell" onclick="openModal('serengeti')">
+      <div class="dest-cell-img"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&q=80" alt="Serengeti"></div>
+      <div class="dest-cell-body"><p class="dest-num">03</p><p class="dest-name">Serengeti</p><p class="dest-region">Tanzania, Africa</p><span class="dest-badge">14-day itinerary</span></div>
+      <span class="dest-arrow">→</span>
+    </div>
+    <div class="dest-cell" onclick="openModal('nz')">
+      <div class="dest-cell-img"><img src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=700&q=80" alt="New Zealand"></div>
+      <div class="dest-cell-body"><p class="dest-num">04</p><p class="dest-name">New Zealand</p><p class="dest-region">South Pacific</p><span class="dest-badge">14-day itinerary</span></div>
+      <span class="dest-arrow">→</span>
+    </div>
+    <div class="dest-cell" onclick="openModal('japan')">
+      <div class="dest-cell-img"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=700&q=80" alt="Japan"></div>
+      <div class="dest-cell-body"><p class="dest-num">05</p><p class="dest-name">Japan</p><p class="dest-region">East Asia</p><span class="dest-badge">14-day itinerary</span></div>
+      <span class="dest-arrow">→</span>
+    </div>
+    <div class="dest-cell" onclick="openModal('namibia')">
+      <div class="dest-cell-img"><img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=700&q=80" alt="Namibia"></div>
+      <div class="dest-cell-body"><p class="dest-num">06</p><p class="dest-name">Namibia</p><p class="dest-region">Southern Africa</p><span class="dest-badge">14-day itinerary</span></div>
+      <span class="dest-arrow">→</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section-bg" id="services">
+  <div class="two-col">
+    <div class="sticky-col">
+      <p class="section-eyebrow">What I offer</p>
+      <h2 class="section-h">Every detail, <em>handled</em></h2>
+      <div style="width:40px;height:1px;background:var(--gold);margin:2rem 0;"></div>
+      <p class="section-p">I take on a limited number of clients each season — so that every trip receives the full attention it deserves. No templates. Just beautifully planned travel.</p>
+      <button class="btn-dark" style="margin-top:2.5rem;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Work with me</button>
+    </div>
+    <div>
+      <div class="svc-grid">
+        <div class="svc-item"><p class="svc-num">01</p><p class="svc-name">Bespoke itineraries</p><p class="svc-desc">Built from scratch around your interests, pace, and travel style.</p></div>
+        <div class="svc-item"><p class="svc-num">02</p><p class="svc-name">Luxury hotel access</p><p class="svc-desc">Preferred partner perks at Aman, Four Seasons, Rosewood & more.</p></div>
+        <div class="svc-item"><p class="svc-num">03</p><p class="svc-name">Honeymoons</p><p class="svc-desc">Romantic escapes designed to be the trip of a lifetime.</p></div>
+        <div class="svc-item"><p class="svc-num">04</p><p class="svc-name">Group travel</p><p class="svc-desc">Family reunions, girls' trips, destination events — seamlessly managed.</p></div>
+        <div class="svc-item"><p class="svc-num">05</p><p class="svc-name">24/7 concierge</p><p class="svc-desc">Real support before, during, and after — whenever you need it.</p></div>
+        <div class="svc-item"><p class="svc-num">06</p><p class="svc-name">Around the world</p><p class="svc-desc">Epic multi-continent journeys and expedition voyages.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIRTUOSO -->
+<section class="section section-dk" id="virtuoso">
+  <div class="virt-inner">
+    <div>
+      <div class="virt-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d4af78" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <span class="virt-badge-text">Virtuoso® Member Advisor</span>
+      </div>
+      <h2 class="virt-h">The perks of booking<br>through a <em>Virtuoso</em> advisor</h2>
+      <div class="virt-rule"></div>
+      <p class="virt-p">As a proud member of Virtuoso — the world's leading luxury travel network — Andrea has access to over 2,200 of the globe's finest hotels, cruise lines, and tour operators. This means every trip comes with exclusive perks that simply aren't available when booking on your own.</p>
+      <div class="virt-perks">
+        <div class="virt-perk"><p class="virt-perk-title">Room upgrades</p><p class="virt-perk-desc">Priority upgrades upon arrival at thousands of properties worldwide.</p></div>
+        <div class="virt-perk"><p class="virt-perk-title">Daily breakfast</p><p class="virt-perk-desc">Complimentary breakfast for two at Virtuoso partner hotels.</p></div>
+        <div class="virt-perk"><p class="virt-perk-title">Hotel credits</p><p class="virt-perk-desc">$100+ property credit for spa, dining, or experiences per stay.</p></div>
+        <div class="virt-perk"><p class="virt-perk-title">VIP treatment</p><p class="virt-perk-desc">Early check-in, late checkout, and personal welcome amenities.</p></div>
+      </div>
+    </div>
+    <div class="virt-img-wrap">
+      <img class="virt-img-main" src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=700&q=80" alt="Luxury resort pool">
+      <div class="virt-img-badge">
+        <p class="virt-img-badge-text">"Same price. Extraordinary extras."</p>
+        <p class="virt-img-badge-sub">Virtuoso perks · no added cost</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="two-col">
+    <div>
+      <p class="section-eyebrow">About Andrea</p>
+      <h2 class="section-h">A passion for the <em>perfectly</em> planned journey</h2>
+      <div style="width:40px;height:1px;background:var(--gold);margin:2rem 0;"></div>
+      <p class="section-p">I've spent years exploring the world's most extraordinary places so you don't have to wonder — only wander. As a Virtuoso member advisor with Fora Travel, I combine insider access, meticulous planning, and genuine personal care to create trips that exceed every expectation.</p>
+      <p class="section-p" style="margin-top:1.25rem;">Every client is different. That's why every itinerary I design is too.</p>
+      <div class="stats-row">
+        <div><p class="stat-n">60+</p><p class="stat-l">Countries visited</p></div>
+      </div>
+    </div>
+    <div>
+      <p class="section-eyebrow">Share your experience</p>
+      <div class="review-form-wrap">
+        <p style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;">Client reviews</p>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--ink);margin-bottom:1.5rem;">Traveled with <em style="font-style:italic;">Andrea?</em></h3>
+        <div id="reviewFormInner">
+          <div class="r-row">
+            <div><label class="r-label">Your name</label><input class="r-input" type="text" placeholder="Jane Smith" id="rName"></div>
+            <div><label class="r-label">Destination</label><input class="r-input" type="text" placeholder="e.g. Maldives" id="rDest"></div>
+          </div>
+          <div class="r-full"><label class="r-label">Your rating</label>
+            <div class="star-row" id="starRow">
+              <span class="star" data-v="1">★</span><span class="star" data-v="2">★</span><span class="star" data-v="3">★</span><span class="star" data-v="4">★</span><span class="star" data-v="5">★</span>
+            </div>
+          </div>
+          <div class="r-full"><label class="r-label">Your review</label><textarea class="r-input" rows="4" placeholder="Tell others about your experience with Andrea..." id="rText"></textarea></div>
+          <button class="btn-review" onclick="submitReview()">Submit review</button>
+        </div>
+        <div id="reviewSuccess" style="display:none;text-align:center;padding:2rem;">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--gold);">"Thank you — your kind words mean the world."</p>
+          <p style="font-size:12px;color:var(--ink3);margin-top:1rem;letter-spacing:0.06em;">— Andrea</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-dk" id="contact">
+  <div class="contact-wrap">
+    <div>
+      <p style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold2);margin-bottom:1.2rem;">Get in touch</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;line-height:1.12;color:var(--cream);">Let's design your <em style="font-style:italic;color:var(--gold2);">perfect trip</em></h2>
+      <div style="width:40px;height:1px;background:var(--gold);margin:2rem 0;"></div>
+      <p style="font-size:14px;color:#8a8278;line-height:1.9;max-width:380px;">Every great journey begins with a conversation. Tell me where you've dreamed of going, and I'll handle everything else.</p>
+      <a href="mailto:Andrea.gonzalez@fora.travel" style="display:block;margin-top:2.5rem;font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--gold2);text-decoration:none;">Andrea.gonzalez@fora.travel</a>
+    </div>
+    <div>
+      <div class="form-row">
+        <div><label style="color:#5a5550;">First name</label><input type="text" placeholder="Jane" style="color:var(--cream);border-bottom-color:#333;"></div>
+        <div><label style="color:#5a5550;">Last name</label><input type="text" placeholder="Smith" style="color:var(--cream);border-bottom-color:#333;"></div>
+      </div>
+      <div class="form-gap"><label style="color:#5a5550;">Email</label><input type="email" placeholder="jane@example.com" style="color:var(--cream);border-bottom-color:#333;"></div>
+      <div class="form-row form-gap">
+        <div><label style="color:#5a5550;">Dream destination</label><input type="text" placeholder="Maldives, Japan..." style="color:var(--cream);border-bottom-color:#333;"></div>
+        <div><label style="color:#5a5550;">When are you thinking?</label>
+          <select style="color:var(--cream);border-bottom-color:#333;background:#1c1a17;">
+            <option>Within 3 months</option><option>3–6 months</option><option>6–12 months</option><option>Just exploring</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-gap"><label style="color:#5a5550;">Tell me about your trip</label><textarea rows="4" placeholder="Who's traveling, what matters most, any must-haves..." style="color:var(--cream);border-bottom-color:#333;"></textarea></div>
+      <button class="btn-submit" id="submitBtn" onclick="this.textContent='Message sent — Andrea will be in touch soon.';this.style.background='var(--gold)';">Send inquiry</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-links-col">
+      <p>Explore</p>
+      <a href="#destinations">Destinations</a>
+      <a href="#services">Services</a>
+      <a href="#virtuoso">Virtuoso perks</a>
+      <a href="#about">About Andrea</a>
+    </div>
+    <div>
+      <p class="footer-logo-big">Curated<br><em>by Andrea</em></p>
+      <p style="text-align:center;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-top:1rem;">Virtuoso® Member Advisor</p>
+    </div>
+    <div class="footer-links-col" style="text-align:right;">
+      <p>Connect</p>
+      <a href="#">Instagram</a>
+      <a href="#">Pinterest</a>
+      <a href="#">LinkedIn</a>
+      <a href="mailto:Andrea.gonzalez@fora.travel">Andrea.gonzalez@fora.travel</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Curated by Andrea · Fora Travel · Virtuoso® Member</p>
+    <div class="footer-social"><a href="#">Instagram</a><a href="#">Pinterest</a></div>
+  </div>
+</footer>
+
+<!-- MODALS -->
+<div id="modalMaldives" class="modal-overlay" onclick="closeModalIfBg(event,'modalMaldives')">
+  <div class="modal-box">
+    <div class="modal-hero"><img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=900&q=80" alt="Maldives"><div class="modal-hero-overlay"></div>
+      <button class="modal-close" onclick="closeModal('modalMaldives')">✕</button>
+      <div class="modal-hero-text"><p class="modal-eyebrow">14-day suggested itinerary</p><h2 class="modal-title">The <em>Maldives</em></h2><p class="modal-subtitle">Malé · North Malé Atoll · Baa Atoll · Lhaviyani Atoll</p></div>
+    </div>
+    <div class="modal-body">
+      <div class="itin-day"><p class="itin-day-label">Days 1–2</p><p class="itin-day-title">Arrival & Malé City</p><p class="itin-activities">Arrive Velana International Airport, private speedboat transfer. Explore Malé's colourful Friday Mosque and fish market. Sunset dhoni cruise with Maldivian mezze and chilled Champagne.</p><span class="itin-hotel">Waldorf Astoria Maldives, Ithaafushi</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 3–5</p><p class="itin-day-title">Overwater villa & house reef</p><p class="itin-activities">Settle into your overwater villa with glass floor panels and direct lagoon access. Dawn snorkel on the pristine house reef, private sandbank picnic lunch, PADI dives at world-class drop-offs.</p><span class="itin-hotel">Gili Lankanfushi, North Malé Atoll</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 6–8</p><p class="itin-day-title">Baa Atoll UNESCO Biosphere</p><p class="itin-activities">Seaplane transfer to Baa Atoll. Snorkel Hanifaru Bay during manta and whale shark season. Underwater dining at Ithaa, spa flotation, bioluminescent night paddle.</p><span class="itin-hotel">Four Seasons Resort Landaa Giraavaru</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 9–11</p><p class="itin-day-title">Remote island hopping</p><p class="itin-activities">Private yacht charter across the atolls, stopping at uninhabited islands. Freediving lesson, Maldivian cooking class on deck, stargazing with an onboard astronomer.</p><span class="itin-hotel">Soneva Jani, Noonu Atoll</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 12–14</p><p class="itin-day-title">Lhaviyani Atoll & farewell</p><p class="itin-activities">Dolphin sunrise cruise, final reef dive, couples massage in an overwater spa pavilion. Farewell dinner under the stars on your private deck. Return seaplane to Malé.</p><span class="itin-hotel">Kuredu Island Resort & Spa</span></div>
+    </div>
+    <div class="modal-cta"><p>Ready to make this your journey?</p><button class="btn-dark" onclick="closeModal('modalMaldives');document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Inquire with Andrea</button></div>
+  </div>
+</div>
+
+<div id="modalAmalfi" class="modal-overlay" onclick="closeModalIfBg(event,'modalAmalfi')">
+  <div class="modal-box">
+    <div class="modal-hero"><img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=900&q=80" alt="Amalfi"><div class="modal-hero-overlay"></div>
+      <button class="modal-close" onclick="closeModal('modalAmalfi')">✕</button>
+      <div class="modal-hero-text"><p class="modal-eyebrow">14-day suggested itinerary</p><h2 class="modal-title"><em>Amalfi</em> Coast</h2><p class="modal-subtitle">Naples · Positano · Ravello · Capri · Sorrento</p></div>
+    </div>
+    <div class="modal-body">
+      <div class="itin-day"><p class="itin-day-label">Days 1–2</p><p class="itin-day-title">Naples & Pompeii</p><p class="itin-activities">Arrive Naples, private transfer. Guided private tour of Pompeii at golden hour, pizza masterclass with a Neapolitan pizzaiolo, sunset aperitivo on the waterfront.</p><span class="itin-hotel">Grand Hotel Parker's, Naples</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 3–5</p><p class="itin-day-title">Positano</p><p class="itin-activities">Arrive by private boat. Bougainvillea-draped streets, custom linen shopping, boat day to sea grottoes, dinner at La Sponda by candlelight with 1,000 candles lining the terrace.</p><span class="itin-hotel">Le Sirenuse, Positano</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 6–7</p><p class="itin-day-title">Ravello & Villa Cimbrone</p><p class="itin-activities">Private transfer to Ravello. Morning stroll through Villa Rufolo gardens, private concert in the cliff-top amphitheatre, long lunch at Rossellinis with Michelin-starred tasting menu.</p><span class="itin-hotel">Belmond Hotel Caruso, Ravello</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 8–10</p><p class="itin-day-title">Capri</p><p class="itin-activities">Hydrofoil to Capri. Blue Grotto at dawn, chairlift to Monte Solaro, private yacht charter around the Faraglioni rocks, Aperol spritz on the Piazzetta.</p><span class="itin-hotel">Capri Palace Jumeirah</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 11–14</p><p class="itin-day-title">Sorrento & farewell</p><p class="itin-activities">Limoncello distillery visit, truffle pasta cooking class, sunset on a private terrace overlooking Vesuvius, last evening gelato passeggiata through the old town.</p><span class="itin-hotel">Grand Hotel Excelsior Vittoria, Sorrento</span></div>
+    </div>
+    <div class="modal-cta"><p>Ready to make this your journey?</p><button class="btn-dark" onclick="closeModal('modalAmalfi');document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Inquire with Andrea</button></div>
+  </div>
+</div>
+
+<div id="modalSerengeti" class="modal-overlay" onclick="closeModalIfBg(event,'modalSerengeti')">
+  <div class="modal-box">
+    <div class="modal-hero"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=900&q=80" alt="Serengeti"><div class="modal-hero-overlay"></div>
+      <button class="modal-close" onclick="closeModal('modalSerengeti')">✕</button>
+      <div class="modal-hero-text"><p class="modal-eyebrow">14-day suggested itinerary</p><h2 class="modal-title">The <em>Serengeti</em></h2><p class="modal-subtitle">Arusha · Central Serengeti · Ngorongoro · Zanzibar</p></div>
+    </div>
+    <div class="modal-body">
+      <div class="itin-day"><p class="itin-day-label">Days 1–2</p><p class="itin-day-title">Arusha Gateway</p><p class="itin-activities">Arrive Kilimanjaro International, stay on a coffee farm estate. Cultural tour of Arusha town and Maasai market, briefing dinner with your private safari guide.</p><span class="itin-hotel">Legendary Lodge, Arusha</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 3–6</p><p class="itin-day-title">Central Serengeti</p><p class="itin-activities">Fly-in camp arrival. Twice-daily game drives in a private 4WD, tracking lion prides and cheetah at dawn. Sundowners on a kopje, bush dinners under lantern-lit acacia trees.</p><span class="itin-hotel">andBeyond Serengeti Under Canvas</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 7–9</p><p class="itin-day-title">Great Migration</p><p class="itin-activities">Follow the wildebeest migration with expert naturalists. Hot air balloon at sunrise over the plains, champagne landing breakfast. Private river crossing viewing at the Mara.</p><span class="itin-hotel">Singita Mara River Tented Camp</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 10–11</p><p class="itin-day-title">Ngorongoro Crater</p><p class="itin-activities">Descend into the world's largest intact caldera. Rare black rhino sightings, pink flamingo lakes, picnic lunch on the crater floor with views of Kilimanjaro.</p><span class="itin-hotel">andBeyond Ngorongoro Crater Lodge</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 12–14</p><p class="itin-day-title">Zanzibar beach finale</p><p class="itin-activities">Fly to Zanzibar. Spice farm tour in Stone Town, dhow sunset cruise, three nights of rest on powder-white beaches with turquoise Indian Ocean.</p><span class="itin-hotel">The Residence Zanzibar</span></div>
+    </div>
+    <div class="modal-cta"><p>Ready to make this your journey?</p><button class="btn-dark" onclick="closeModal('modalSerengeti');document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Inquire with Andrea</button></div>
+  </div>
+</div>
+
+<div id="modalNZ" class="modal-overlay" onclick="closeModalIfBg(event,'modalNZ')">
+  <div class="modal-box">
+    <div class="modal-hero"><img src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=900&q=80" alt="New Zealand"><div class="modal-hero-overlay"></div>
+      <button class="modal-close" onclick="closeModal('modalNZ')">✕</button>
+      <div class="modal-hero-text"><p class="modal-eyebrow">14-day suggested itinerary</p><h2 class="modal-title">New <em>Zealand</em></h2><p class="modal-subtitle">Auckland · Bay of Islands · Rotorua · Queenstown · Fiordland</p></div>
+    </div>
+    <div class="modal-body">
+      <div class="itin-day"><p class="itin-day-label">Days 1–2</p><p class="itin-day-title">Auckland & Waiheke Island</p><p class="itin-activities">Arrive Auckland. Ferry to Waiheke Island for wine tasting at Stonyridge and Mudbrick, oysters at Cable Bay. Evening cocktails overlooking the Hauraki Gulf.</p><span class="itin-hotel">The Hotel Britomart, Auckland</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 3–4</p><p class="itin-day-title">Bay of Islands</p><p class="itin-activities">Fly north to Kerikeri. Scenic cruise of the Bay of Islands, dolphin watching, visit to Cape Reinga. Private charter option available.</p><span class="itin-hotel">Kauri Cliffs Lodge, Matauri Bay</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 5–6</p><p class="itin-day-title">Rotorua & Geothermal Wonders</p><p class="itin-activities">Fly to Rotorua. Champagne breakfast at Te Puia, private Maori cultural evening, heli-tour over volcanic landscape. Private Polynesian hot pools at sunset.</p><span class="itin-hotel">Treetops Lodge & Estate, Rotorua</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 7–9</p><p class="itin-day-title">Queenstown & Lake Wakatipu</p><p class="itin-activities">Fly south. Private jet boat on the Dart River, helicopter glacier landing, award-winning dinner at Amisfield Winery. Morning yoga with mountain views.</p><span class="itin-hotel">Eichardt's Private Hotel, Queenstown</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 10–11</p><p class="itin-day-title">Milford Sound & Fiordland</p><p class="itin-activities">Scenic flight into Milford Sound. Overnight luxury cruise — waterfalls, seals, dolphins, kayaking at dawn in the ancient fiord.</p><span class="itin-hotel">Milford Sound Lodge, exclusive suite</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 12–14</p><p class="itin-day-title">Central Otago & Christchurch</p><p class="itin-activities">Private pinot noir tastings in Gibbston Valley. Hot air balloon over Canterbury Plains at sunrise. Farewell dinner at Twenty Seven Steps, Christchurch.</p><span class="itin-hotel">The George, Christchurch</span></div>
+    </div>
+    <div class="modal-cta"><p>Ready to make this your journey?</p><button class="btn-dark" onclick="closeModal('modalNZ');document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Inquire with Andrea</button></div>
+  </div>
+</div>
+
+<div id="modalJapan" class="modal-overlay" onclick="closeModalIfBg(event,'modalJapan')">
+  <div class="modal-box">
+    <div class="modal-hero"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=900&q=80" alt="Japan"><div class="modal-hero-overlay"></div>
+      <button class="modal-close" onclick="closeModal('modalJapan')">✕</button>
+      <div class="modal-hero-text"><p class="modal-eyebrow">14-day suggested itinerary</p><h2 class="modal-title"><em>Japan</em></h2><p class="modal-subtitle">Tokyo · Hakone · Kyoto · Hiroshima · Osaka</p></div>
+    </div>
+    <div class="modal-body">
+      <div class="itin-day"><p class="itin-day-label">Days 1–3</p><p class="itin-day-title">Tokyo</p><p class="itin-activities">Arrive Narita, transfer to Shinjuku. Tsukiji outer market breakfast, private Shibuya crossing at dawn, rooftop omakase sushi dinner. Luxury Shinkansen day trip to Nikko.</p><span class="itin-hotel">Aman Tokyo, Otemachi</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 4–5</p><p class="itin-day-title">Hakone & Mt Fuji</p><p class="itin-activities">Private chartered car to Hakone. Ryokan check-in, kaiseki dinner, open-air onsen with views of Fuji at sunrise. Glass-fronted cable car over volcanic landscape.</p><span class="itin-hotel">Gora Kadan Ryokan, Hakone</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 6–9</p><p class="itin-day-title">Kyoto</p><p class="itin-activities">Shinkansen to Kyoto. Private temple access at Fushimi Inari and Kinkaku-ji before the crowds. Tea ceremony with a grandmaster, geisha dining experience in a private machiya.</p><span class="itin-hotel">Aman Kyoto, Kinkaku-ji district</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 10–11</p><p class="itin-day-title">Hiroshima & Miyajima</p><p class="itin-activities">Peace Memorial Museum private tour, ferry to Miyajima to see the floating torii gate at high tide. Matcha ceremony at a riverside teahouse.</p><span class="itin-hotel">Grand Prince Hotel Hiroshima</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 12–14</p><p class="itin-day-title">Osaka & farewell</p><p class="itin-activities">Dotonbori food crawl, Osaka Castle at dawn, cooking class for takoyaki and ramen. Farewell 10-course kappo dinner in a chef's private dining room.</p><span class="itin-hotel">The St. Regis Osaka</span></div>
+    </div>
+    <div class="modal-cta"><p>Ready to make this your journey?</p><button class="btn-dark" onclick="closeModal('modalJapan');document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Inquire with Andrea</button></div>
+  </div>
+</div>
+
+<div id="modalNamibia" class="modal-overlay" onclick="closeModalIfBg(event,'modalNamibia')">
+  <div class="modal-box">
+    <div class="modal-hero"><img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=900&q=80" alt="Namibia"><div class="modal-hero-overlay"></div>
+      <button class="modal-close" onclick="closeModal('modalNamibia')">✕</button>
+      <div class="modal-hero-text"><p class="modal-eyebrow">14-day suggested itinerary</p><h2 class="modal-title"><em>Namibia</em></h2><p class="modal-subtitle">Windhoek · Sossusvlei · Damaraland · Skeleton Coast · Etosha</p></div>
+    </div>
+    <div class="modal-body">
+      <div class="itin-day"><p class="itin-day-label">Days 1–2</p><p class="itin-day-title">Windhoek Arrival</p><p class="itin-activities">Arrive Windhoek, private city tour through the colonial German quarter. Sundowner cocktails on a hilltop terrace. Briefing dinner with your private safari guide.</p><span class="itin-hotel">The Olive Exclusive, Windhoek</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 3–5</p><p class="itin-day-title">Sossusvlei & the Namib Desert</p><p class="itin-activities">Fly to Sossusvlei. Sunrise climb of Dune 45 and Big Daddy. Walk the stark white Deadvlei pan at golden hour. Hot air balloon over the Namib, champagne landing breakfast.</p><span class="itin-hotel">Sossusvlei Desert Lodge, &Beyond</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 6–7</p><p class="itin-day-title">Damaraland & Desert Elephants</p><p class="itin-activities">Fly north to Damaraland. Track rare desert-adapted elephants and black rhino with expert naturalists. Visit Twyfelfontein rock engravings (UNESCO). Night drive under extraordinary skies.</p><span class="itin-hotel">Damaraland Camp, Wilderness Safaris</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 8–9</p><p class="itin-day-title">Skeleton Coast</p><p class="itin-activities">Fly to the haunting Skeleton Coast. Walk among Cape fur seal colonies, explore shipwrecks, witness the desert meeting the cold Atlantic.</p><span class="itin-hotel">Hoanib Skeleton Coast Camp</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 10–12</p><p class="itin-day-title">Etosha National Park</p><p class="itin-activities">Fly to Etosha. Game drives around the famous salt pan — lion, leopard, elephant, black rhino. Floodlit waterhole viewing from your private suite deck at night.</p><span class="itin-hotel">Onguma The Fort, Etosha East</span></div>
+      <div class="itin-day"><p class="itin-day-label">Days 13–14</p><p class="itin-day-title">Swakopmund & Farewell</p><p class="itin-activities">Fly to Swakopmund. Morning quad biking over dunes, afternoon oysters at the waterfront, sunset kayak with seals. Final farewell dinner and homeward transfer.</p><span class="itin-hotel">The Delight Hotel, Swakopmund</span></div>
+    </div>
+    <div class="modal-cta"><p>Ready to make this your journey?</p><button class="btn-dark" onclick="closeModal('modalNamibia');document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Inquire with Andrea</button></div>
+  </div>
+</div>
+
+<script>
+const modalMap={maldives:'modalMaldives',amalfi:'modalAmalfi',serengeti:'modalSerengeti',nz:'modalNZ',japan:'modalJapan',namibia:'modalNamibia'};
+function openModal(id){const m=modalMap[id];if(m){document.getElementById(m).classList.add('open');document.body.style.overflow='hidden';}}
+function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
+function closeModalIfBg(e,id){if(e.target===document.getElementById(id))closeModal(id);}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){Object.values(modalMap).forEach(m=>closeModal(m));}});
+let rating=0;
+document.getElementById('starRow').addEventListener('click',function(e){
+  if(e.target.classList.contains('star')){
+    rating=parseInt(e.target.dataset.v);
+    document.querySelectorAll('.star').forEach(s=>s.classList.toggle('active',parseInt(s.dataset.v)<=rating));
+  }
+});
+function submitReview(){
+  const name=document.getElementById('rName').value.trim();
+  const text=document.getElementById('rText').value.trim();
+  if(!name||!text||!rating){alert('Please fill in your name, a rating, and your review.');return;}
+  document.getElementById('reviewFormInner').style.display='none';
+  document.getElementById('reviewSuccess').style.display='block';
+}
+</script>
+</body>
+</html>
