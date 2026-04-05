@@ -318,7 +318,7 @@ footer{background:var(--ink);padding:4rem 3rem 2rem;}
       </div>
       <h2 class="virt-h">The perks of booking<br>through a <em>Virtuoso</em> advisor</h2>
       <div class="virt-rule"></div>
-      <p class="virt-p">As a proud member of Virtuoso — the world's leading luxury travel network — Andrea has access to over 2,200 of the globe's finest hotels, cruise lines, and tour operators. This means every trip comes with exclusive perks that simply aren't available when booking on your own.</p>
+      <p class="virt-p">As a proud member of Virtuoso — the world's leading luxury travel network — Andrea has access to over 2,200 of the globe's finest hotels, cruise lines, and tour operators. This means every luxury trip comes with exclusive perks that simply aren't available when booking on your own.</p>
       <div class="virt-perks">
         <div class="virt-perk"><p class="virt-perk-title">Room upgrades</p><p class="virt-perk-desc">Priority upgrades upon arrival at thousands of properties worldwide.</p></div>
         <div class="virt-perk"><p class="virt-perk-title">Daily breakfast</p><p class="virt-perk-desc">Complimentary breakfast for two at Virtuoso partner hotels.</p></div>
@@ -350,10 +350,13 @@ footer{background:var(--ink);padding:4rem 3rem 2rem;}
       </div>
     </div>
     <div>
-      <p class="section-eyebrow">Share your experience</p>
+      <p class="section-eyebrow">Kind words</p>
       <div class="review-form-wrap">
         <p style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;">Client reviews</p>
         <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--ink);margin-bottom:1.5rem;">Traveled with <em style="font-style:italic;">Andrea?</em></h3>
+
+        <div id="reviewsList" style="margin-bottom:2rem;"></div>
+
         <div id="reviewFormInner">
           <div class="r-row">
             <div><label class="r-label">Your name</label><input class="r-input" type="text" placeholder="Jane Smith" id="rName"></div>
@@ -365,11 +368,7 @@ footer{background:var(--ink);padding:4rem 3rem 2rem;}
             </div>
           </div>
           <div class="r-full"><label class="r-label">Your review</label><textarea class="r-input" rows="4" placeholder="Tell others about your experience with Andrea..." id="rText"></textarea></div>
-          <button class="btn-review" onclick="submitReview()">Submit review</button>
-        </div>
-        <div id="reviewSuccess" style="display:none;text-align:center;padding:2rem;">
-          <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--gold);">"Thank you — your kind words mean the world."</p>
-          <p style="font-size:12px;color:var(--ink3);margin-top:1rem;letter-spacing:0.06em;">— Andrea</p>
+          <button class="btn-review" id="reviewSubmitBtn" onclick="submitReview()">Submit review</button>
         </div>
       </div>
     </div>
@@ -387,21 +386,26 @@ footer{background:var(--ink);padding:4rem 3rem 2rem;}
       <a href="mailto:Andrea.gonzalez@fora.travel" style="display:block;margin-top:2.5rem;font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--gold2);text-decoration:none;">Andrea.gonzalez@fora.travel</a>
     </div>
     <div>
-      <div class="form-row">
-        <div><label style="color:#5a5550;">First name</label><input type="text" placeholder="Jane" style="color:var(--cream);border-bottom-color:#333;"></div>
-        <div><label style="color:#5a5550;">Last name</label><input type="text" placeholder="Smith" style="color:var(--cream);border-bottom-color:#333;"></div>
-      </div>
-      <div class="form-gap"><label style="color:#5a5550;">Email</label><input type="email" placeholder="jane@example.com" style="color:var(--cream);border-bottom-color:#333;"></div>
-      <div class="form-row form-gap">
-        <div><label style="color:#5a5550;">Dream destination</label><input type="text" placeholder="Maldives, Japan..." style="color:var(--cream);border-bottom-color:#333;"></div>
-        <div><label style="color:#5a5550;">When are you thinking?</label>
-          <select style="color:var(--cream);border-bottom-color:#333;background:#1c1a17;">
-            <option>Within 3 months</option><option>3–6 months</option><option>6–12 months</option><option>Just exploring</option>
-          </select>
+      <form id="inquiryForm" action="https://formspree.io/f/mbdpqrzq" method="POST">
+        <div class="form-row">
+          <div><label style="color:#5a5550;">First name</label><input type="text" name="first_name" placeholder="Jane" required style="color:var(--cream);border-bottom-color:#333;"></div>
+          <div><label style="color:#5a5550;">Last name</label><input type="text" name="last_name" placeholder="Smith" style="color:var(--cream);border-bottom-color:#333;"></div>
         </div>
+        <div class="form-gap"><label style="color:#5a5550;">Email</label><input type="email" name="email" placeholder="jane@example.com" required style="color:var(--cream);border-bottom-color:#333;"></div>
+        <div class="form-row form-gap">
+          <div><label style="color:#5a5550;">Dream destination</label><input type="text" name="destination" placeholder="Maldives, Japan..." style="color:var(--cream);border-bottom-color:#333;"></div>
+          <div><label style="color:#5a5550;">When are you thinking?</label>
+            <select name="timeframe" style="color:var(--cream);border-bottom-color:#333;background:#1c1a17;">
+              <option>Within 3 months</option><option>3–6 months</option><option>6–12 months</option><option>Just exploring</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-gap"><label style="color:#5a5550;">Tell me about your trip</label><textarea name="message" rows="4" placeholder="Who's traveling, what matters most, any must-haves..." style="color:var(--cream);border-bottom-color:#333;"></textarea></div>
+        <button type="submit" class="btn-submit" id="submitBtn">Send inquiry</button>
+      </form>
+      <div id="formSuccess" style="display:none;padding:2rem 0;text-align:center;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--gold2);">"Your message has been sent — Andrea will be in touch soon."</p>
       </div>
-      <div class="form-gap"><label style="color:#5a5550;">Tell me about your trip</label><textarea rows="4" placeholder="Who's traveling, what matters most, any must-haves..." style="color:var(--cream);border-bottom-color:#333;"></textarea></div>
-      <button class="btn-submit" id="submitBtn" onclick="this.textContent='Message sent — Andrea will be in touch soon.';this.style.background='var(--gold)';">Send inquiry</button>
     </div>
   </div>
 </section>
@@ -545,20 +549,104 @@ function openModal(id){const m=modalMap[id];if(m){document.getElementById(m).cla
 function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
 function closeModalIfBg(e,id){if(e.target===document.getElementById(id))closeModal(id);}
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){Object.values(modalMap).forEach(m=>closeModal(m));}});
-let rating=0;
-document.getElementById('starRow').addEventListener('click',function(e){
-  if(e.target.classList.contains('star')){
-    rating=parseInt(e.target.dataset.v);
-    document.querySelectorAll('.star').forEach(s=>s.classList.toggle('active',parseInt(s.dataset.v)<=rating));
+
+// Formspree AJAX submission
+const form = document.getElementById('inquiryForm');
+if(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if(res.ok){
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        btn.textContent = 'Something went wrong — please email Andrea directly.';
+        btn.style.background = 'var(--gold)';
+      }
+    } catch(err){
+      btn.textContent = 'Something went wrong — please email Andrea directly.';
+      btn.style.background = 'var(--gold)';
+    }
+  });
+}
+
+// Reviews — load from localStorage and render
+let rating = 0;
+const STORAGE_KEY = 'cba_reviews_v1';
+
+function loadReviews() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+  catch(e) { return []; }
+}
+
+function saveReviews(reviews) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(reviews)); } catch(e) {}
+}
+
+function starsHtml(n) {
+  return Array.from({length:5}, (_,i) =>
+    '<span style="color:' + (i < n ? 'var(--gold2)' : 'var(--cream3)') + ';font-size:16px;">★</span>'
+  ).join('');
+}
+
+function renderReviews() {
+  const list = document.getElementById('reviewsList');
+  if (!list) return;
+  const reviews = loadReviews();
+  if (reviews.length === 0) { list.innerHTML = ''; return; }
+  list.innerHTML = reviews.map(r => `
+    <div style="border-left:2px solid var(--gold);padding:1rem 0 1rem 1.25rem;margin-bottom:1.5rem;">
+      <div style="margin-bottom:0.4rem;">${starsHtml(r.rating)}</div>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:var(--ink);line-height:1.6;margin-bottom:0.5rem;">"${r.text}"</p>
+      <p style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);">${r.name}${r.dest ? ' &mdash; ' + r.dest : ''}</p>
+    </div>
+  `).join('');
+}
+
+document.getElementById('starRow').addEventListener('click', function(e) {
+  if (e.target.classList.contains('star')) {
+    rating = parseInt(e.target.dataset.v);
+    document.querySelectorAll('.star').forEach(s => s.classList.toggle('active', parseInt(s.dataset.v) <= rating));
   }
 });
-function submitReview(){
-  const name=document.getElementById('rName').value.trim();
-  const text=document.getElementById('rText').value.trim();
-  if(!name||!text||!rating){alert('Please fill in your name, a rating, and your review.');return;}
-  document.getElementById('reviewFormInner').style.display='none';
-  document.getElementById('reviewSuccess').style.display='block';
+
+function submitReview() {
+  const name = document.getElementById('rName').value.trim();
+  const dest = document.getElementById('rDest').value.trim();
+  const text = document.getElementById('rText').value.trim();
+  if (!name || !text || !rating) {
+    alert('Please fill in your name, a rating, and your review.');
+    return;
+  }
+  const reviews = loadReviews();
+  reviews.unshift({ name, dest, rating, text, date: new Date().toLocaleDateString('en-US', {month:'long', year:'numeric'}) });
+  saveReviews(reviews);
+  renderReviews();
+
+  // Reset form
+  document.getElementById('rName').value = '';
+  document.getElementById('rDest').value = '';
+  document.getElementById('rText').value = '';
+  rating = 0;
+  document.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
+
+  const btn = document.getElementById('reviewSubmitBtn');
+  btn.textContent = 'Review posted — thank you!';
+  btn.style.background = 'var(--gold)';
+  setTimeout(() => { btn.textContent = 'Submit review'; btn.style.background = ''; }, 3000);
 }
+
+// Render existing reviews on page load
+renderReviews();
 </script>
 </body>
 </html>
